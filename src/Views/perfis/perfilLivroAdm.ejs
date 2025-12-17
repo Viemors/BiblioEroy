@@ -51,7 +51,7 @@
               </div>
               <% } %>
 
-                <form action="/addLivro" method="POST">
+                <form action="/addLivro" method="POST" enctype="multipart/form-data"> <!-- enctype é obrigatório pra upload -->
                   <div>
                     <label for="inputNome">Título</label>
                     <input type="text" placeholder="Digite o título" name="titulo" required>
@@ -69,12 +69,12 @@
 
                   <div>
                     <label for="inputSobrenome">Descrição</label>
-                    <input type="text" placeholder="Digite a descrição" name="descrição">
+                    <input type="text" placeholder="Digite a descrição" name="descricao">
                   </div><br>
 
                   <div>
                     <label for="inputSobrenome">Imagem do livro</label>
-                    <input type="file" accept="image/png, image/jpeg, image/webp" id="img" name="imgLivro" required>
+                    <input type="file" accept="image/png, image/jpeg, image/webp" id="img" name="imagem" required>
                   </div><br>
 
                   <div>

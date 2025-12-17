@@ -13,6 +13,8 @@ app.use(express.static(path.join(__dirname, 'view')));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+const upload = require('./config/uploadConfig'); //multer
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 

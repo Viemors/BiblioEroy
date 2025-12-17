@@ -49,6 +49,25 @@
               </div>
               <% } %>
 
+              <nav class="navbar navbar-light bg-light" id="buscarLivro">
+                <form class="form-inline" action="/buscarLivro" method="POST">
+                  <input type="radio" name="tipo" value="titulo" id="titulo" required>
+                  <label for="titulo" style="padding-right:10px;">Título</label>
+
+                  <input type="radio" name="tipo" value="categoria" id="categoria" required>
+                  <label for="categoria" style="padding-right:10px;">Categoria</label>
+                  
+                  <input type="radio" name="tipo" value="autor" id="autor" required>
+                  <label for="autor" style="padding-right:10px;">Autor</label>
+
+                  <input type="radio" name="tipo" value="leitor" id="leitor" required>
+                  <label for="leitor" style="padding-right:10px;">Leitor</label>
+
+                  <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+              </nav>
+
                 <!-- Grid de cards -->
                 <div class="album py-5 bg-light">
                   <div class="container">

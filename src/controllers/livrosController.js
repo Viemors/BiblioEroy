@@ -13,8 +13,17 @@ const teste = async (req, res) => {
 }
 
 const add = async (req, res) => {
-    if (!req.body.descricao) delete req.body.descricao;//remove o campo vazio pra aparecer "sem descrição" no sequelize
-    if (!req.body.imagem) delete req.body.imagem; //remove o campo vazio pra aparecer "sem imagem" no sequelize
+    if (req.file) {
+    req.body.imagem = '/img/livros/' + req.file.filename; //faz a img que o adm colocar ficar salva na pasta de livros, pra incluir o autor é mto trampo
+    } 
+
+    if (!req.body.descricao) {
+        delete req.body.descricao;//remove o campo vazio pra aparecer "sem descrição" no sequelize
+    }
+
+    if (!req.body.imagem) {
+        delete req.body.imagem;//remove o campo vazio pra aparecer "sem imagem" no sequelize
+    } 
     const result = await model.add(req.body)
     if (result) {
         req.flash('success','livro adicionado com sucesso.');
@@ -28,14 +37,14 @@ const add = async (req, res) => {
 const delet = async (req, res) => {
     await model.delet(req.params.id)
      req.flash('success','livro deletado com sucesso.');
-    return res.redirect('/livro');
+    return res.redirect('/perfil/livro');
 }
 
 //Buscar por alguma coisa
 const buscar = async (req, res) => {
     if (!req.body.tipo){ 
         req.flash("error", "Selecione um tipo para busca.")
-        return res.redirect("/emprestimo");
+        return res.redirect("/perfil/livro");
     }
     if (req.body.tipo == "titulo") {
        try{
@@ -43,7 +52,7 @@ const buscar = async (req, res) => {
           res.render("tabelaLivro/consultas", {result});
     } catch(error){
         req.flash("error", "Titulo não encontado.")
-        return res.redirect("/emprestimo");
+        return res.redirect("/perfil/livro");
     }
     }
     if (req.body.tipo == "categoria") {
@@ -52,11 +61,11 @@ const buscar = async (req, res) => {
            res.render("tabelaLivro/consultas", {result});
            if (!result) {
             req.flash("error", "Categoria não encontrada.")
-            return res.redirect("/emprestimo");
+            return res.redirect("/perfil/livro");
            }
     } catch(error){
         req.flash("error", error.message)
-        return res.redirect("/emprestimo");
+        return res.redirect("/perfil/livro");
     }
     }
     if (req.body.tipo == "autor") {
@@ -64,12 +73,12 @@ const buscar = async (req, res) => {
             const result = await model.buscar_autor(req.body.busca);
             if (result.resultados.length == 0) {
                 req.flash("error", "autor não encontrado.")
-                return res.redirect("/emprestimo");
+                return res.redirect("/perfil/livro");
            }
            res.render("tabelaLivro/consultas", {result});
     } catch(error){
         req.flash("error", error.message)
-        return res.redirect("/emprestimo");
+        return res.redirect("/perfil/livro");
     }
     }
     if (req.body.tipo == "leitor") {
@@ -78,7 +87,7 @@ const buscar = async (req, res) => {
             res.render("tabelaLivro/consultas", {result});
     } else {
         req.flash("error", "Leitor não encontado.")
-        return res.redirect("/emprestimo");
+        return res.redirect("/perfil/livro");
     }
     }
 }
