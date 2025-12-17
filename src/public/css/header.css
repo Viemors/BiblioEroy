@@ -1,0 +1,32 @@
+#header {
+    background-color: #42635b;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#header ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+    margin: 0;
+    left: 1;
+    padding: 0;
+}
+
+#header a {
+    color: #fff5e8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#header a:hover {
+    color: #d1e1ff;
+}

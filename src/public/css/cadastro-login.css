@@ -1,0 +1,29 @@
+/* cores: #2b4b44 (azul), #f9f0e5 (bege), #ffefdb (bege escurinho), #42635b (azul apagado) */
+
+* {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+#button {
+  border-color: #2b4b44;
+  color:#a8d1c8;
+  background-color: #2b4b44;
+  text-decoration: none;
+}
+
+#button:hover {
+  border-color: #a8d1c8;
+  background-color: #a8d1c8;
+  color: #2b4b44;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

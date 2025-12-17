@@ -1,0 +1,29 @@
+* {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
