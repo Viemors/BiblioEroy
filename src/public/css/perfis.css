@@ -24,9 +24,8 @@ form {
 }
 
 #buscarLivro {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
 }
 

@@ -35,7 +35,7 @@ main h1 {
 }
 
 /* Estiliza o card central que contém a capa */
-main .card.h-100 {
+.card.h-100 {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@ main .card.h-100 {
   border: none;
 }
 
-main .card.h-100 img {
+.card.h-100 img {
   width: 360px; /* capa maior para combinar com referência */
   height: 500px;
   border-radius: 18px;
@@ -52,53 +52,14 @@ main .card.h-100 img {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
-main .card-body .card-title {
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 300;
-  font-style: italic;
-  color: #42635b;
-  text-align: center;
-}
-
-main .card-body .card-text {
-  font-size: 1rem;
-  color: #42635b;
-  text-align: center;
-}
-
-/* Autor e categoria são parágrafos depois do card */
-/* Autor e categoria (parágrafos após o card) */
-main p:nth-of-type(2) {
-  color: #42635b;
-  font-size: 1rem;
-  margin-top: 12px;
-}
-
-main p:nth-of-type(3) {
-  color: #42635b;
-  font-size: 2rem; /* autor maior, centralizado sob a capa */
-  font-style: italic;
-  text-align: center;
-  margin-top: 18px;
-}
-
 /* Coluna Esquerda - Título e Descrição */
 .esquerda {
+    margin-top: 30px;
     height: 100%;
     margin-left: 70px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-.livro-titulo {
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 3.5rem;
-  font-style: italic;
-  color: #42635b;
-  font-weight: 300;
-  line-height: 1.1;
 }
 
 #descricao {
@@ -110,15 +71,16 @@ main p:nth-of-type(3) {
 
 /* Centro - Capa do Livro */
 .centro {
-    height: 100%;
+  margin-top: 20px;
+  height: 100%;
   display: flex;
   justify-content: center;
   margin: 40px 0;
 }
 
 .capaLivro {
-  width: 380px;
-  height: 480px;
+  width: 480px;
+  height: 580px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -131,17 +93,17 @@ main p:nth-of-type(3) {
 }
 
 /* Coluna Direita - Generos, Rating, Autor */
-.livro-details {
+.direita {
+  margin-top: 30px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
 }
 
-.generos-section h3 {
+
+ #categoria {
+  color: #42635b;
   font-family: 'Lexend Deca', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 20px;
@@ -149,116 +111,31 @@ main p:nth-of-type(3) {
   font-style: italic;
 }
 
-.generos-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.genero-tag {
-  border: 2px solid #f5f1e8;
-  border-radius: 25px;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #42635b;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.genero-tag:hover {
-  background-color: rgba(245, 241, 232, 0.1);
-}
-
-/* Rating */
 #classific {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-  background-color: rgba(245, 241, 232, 0.15);
-  border-radius: 12px;
-  border: 2px solid #f5f1e8;
-}
-
-.rating-stars {
   font-size: 1.5rem;
-  letter-spacing: 5px;
+  color: #42635b;
 }
 
 /* Autor */
 #autor {
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid rgba(245, 241, 232, 0.3);
-  border-bottom: 1px solid rgba(245, 241, 232, 0.3);
-}
-
-#autor h4 {
+  color: #42635b;
   font-family: 'Lexend Deca', sans-serif;
   font-size: 1.8rem;
-  font-weight: 300;
+  margin-bottom: 20px;
+  font-weight: 400;
   font-style: italic;
-  margin-bottom: 10px;
-}
-
-#autor p {
-  font-size: 1rem;
-  color: #f5f1e8;
-}
-
-.direita {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
 }
 
 /* Responsividade */
 @media (max-width: 1024px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
+ 
 }
 
 @media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 
-  .livro-titulo {
-    font-size: 2.5rem;
-  }
-
-  .livro-details {
-    padding: 20px;
-  }
-
-  .resenhas-section {
-    justify-content: center;
-    margin-top: 20px;
-  }
 }
+    
 
 @media (max-width: 480px) {
-  body {
-    padding: 20px 15px;
-  }
 
-  .livro-titulo {
-    font-size: 2rem;
-  }
-
-  .livro-capa {
-    width: 220px;
-    height: 300px;
-  }
-
-  .generos-section h3,
-  .autor-section h4 {
-    font-size: 1.5rem;
-  }
 }
