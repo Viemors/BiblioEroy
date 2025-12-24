@@ -135,12 +135,16 @@ const mostrarPerfil = async (req, res) => { //tava dsando erraado o result no ej
         if (result) {
             const resultados = await modelEmprestimo.buscar_LivrosLeitor(req.session.username); //chama a funcao pra pegar os livros do leitor logado
             const livros = []
+            const todosLivros = [] //pra mostrar todos os livros na parte de emprestar, tava no ejs mas n funcionava
             for(let i = 0; i < resultados.length; i++) { 
-                const livro = await modelLivros.buscar_id(resultados[i].Idlivro);
-                livros.push(livro);
+                const livro = await modelLivros.buscar_titulo(resultados[i].tituloLivro);
+                if (livro && livro.resultados && livro.resultados.length > 0) {
+                    livros.push(livro.resultados[0]);
+                    todosLivros.push(livro.resultados[0]);
+                }
             };
             const atrasos = await modelEmprestimo.emprestimosAtrasados(resultados);
-            res.render("perfis/perfilLeitor", {result, livros, atrasos});//se tiver logado, manda pro perfil
+            res.render("perfis/perfilLeitor", {result, livros, todosLivros, atrasos});//se tiver logado, manda pro perfil
         } else {
             req.flash('error', "Usuário não encontrado");
             return res.redirect('/login');

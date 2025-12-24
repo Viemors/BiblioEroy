@@ -49,6 +49,9 @@ const emprestimo = require('./routes/emprestimoRoutes');
 app.use('/', emprestimo); 
 
 const bd = require('./routes/bdRoutes');
-app.use('/', bd); 
+app.use('/', bd);
+
+const resenhas = require('./routes/resenhasRoutes');
+app.use('/', resenhas);
 
 module.exports = app;

@@ -45,12 +45,12 @@ const add = async (params) => await emprestimo.create(params)
 
 const buscar_id = (id) => emprestimo.findByPk(id)
 
-const buscar_LivrosLeitor = async (leitor) => { //essa aq já nao funciona, nao tem emprestimo nenhum
-    const result = await bd.promise().query(`SELECT * FROM emprestimos WHERE emprestimos.nomeLeitor = '${leitor}'`)//tanto que aq ta errado
-    .then(([rows, fields]) => {return {resultados: rows, colunas: fields} })
-    .catch((erro) => {return erro})
-
-    return result;
+const buscar_LivrosLeitor = async (leitor) => {
+    return await emprestimo.findAll({
+        where: {
+            nomeLeitor: leitor
+        }
+    });
 }
 
 const buscar_LivrosADM = async (biblio) => await emprestimo.findAll({
