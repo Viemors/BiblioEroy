@@ -9,14 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 const path = require('path');
-app.use(express.static(path.join(__dirname, 'view')));
+app.use(express.static(path.join(__dirname, 'Views')));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 const upload = require('./config/uploadConfig'); //multer
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'Views'));
 
 app.use(session({ //peguei de um site, aparentemente é padrão
     secret: 'segredo-super-seguro',  // Chave usada para assinar o cookie da sessão

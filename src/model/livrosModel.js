@@ -111,7 +111,4 @@ const mostrarDados = async () => {
     return result
 }
 
-    
-
-
 module.exports = {livros, Todos, add, delet, buscar_id, buscar, buscar_titulo, buscar_autor, buscar_categoria, mostrarDados};

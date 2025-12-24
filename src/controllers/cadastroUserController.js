@@ -135,7 +135,7 @@ const mostrarPerfil = async (req, res) => { //tava dsando erraado o result no ej
         if (result) {
             const resultados = await modelEmprestimo.buscar_LivrosLeitor(req.session.username); //chama a funcao pra pegar os livros do leitor logado
             const livros = []
-            for(let i = 0; i < resultados.lenght; i++) { 
+            for(let i = 0; i < resultados.length; i++) { 
                 const livro = await modelLivros.buscar_id(resultados[i].Idlivro);
                 livros.push(livro);
             };

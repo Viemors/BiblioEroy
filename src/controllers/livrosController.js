@@ -1,6 +1,7 @@
 const model = require("../model/livrosModel") //isso aq é o mesmo que ta no bdcontroller, pq ambos fazem a mesma coisa
 const modelEmprestimo = require("../model/emprestimoModel")
 const modelUser = require("../model/cadastroUserModel")
+const { buscar_id } = require("./emprestimoController")
 
 const inicio = (req, res) =>  {
     res.json({Ver_todos: "/mostrar", delete: "/delete:id(o que tu quiser, mas que exista na tabela)", buscar_ID: "/buscar:id(o que tu quiser, mas que exista na tabela)", Adicionar: "/add?titulo=titulo(que tu quiser, sem aspas)&autor=autor(que tu quiser, sem aspas)", atualizar: "/atualizar?id=num(que quer mudar)&titulo=Titulo(novo)&autor=autor(novo)"})
@@ -107,5 +108,15 @@ const mostrar = async (req, res) => {
     }
 }
 
+const perfilLivro = async (req, res) => {
+    const livro = await model.buscar_id(req.params.id);
 
-module.exports = {add, teste, buscar, delet, atualizar, inicio, mostrar}
+    if (livro) {
+        res.render("pages/perfilLiv", { livro });
+    } else {
+        req.flash("error", "Livro não encontrado.");
+        return res.redirect("/perfil/livro");
+    }
+};
+
+module.exports = {add, teste, buscar_id, buscar, delet, atualizar, inicio, mostrar, perfilLivro}
