@@ -135,6 +135,53 @@ footer {
   transform: translateY(0);
 }
 
+.card-text {
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* Propriedade padrão */
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.card-text.expanded {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  display: block; /* Garante que o texto flua naturalmente ao expandir */
+  overflow: visible;
+}
+
+.read-more {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0d6efd; /* Cor primária do Bootstrap */
+  cursor: pointer;
+} 
+/* Garante que os cards não tentem se igualar na altura da linha */
+.row-cols-1, .row-cols-md-2, .row-cols-lg-3 {
+  align-items: flex-start; /* Alinha os cards no topo, deixando a altura livre */
+}
+
+.card {
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 0 1 auto; /* Impede o corpo de crescer para preencher espaços vazios */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove o empurrão automático para o fundo que o mt-auto causa em contextos de altura fixa */
+.mt-auto {
+  margin-top: 20px !important; 
+}
+
 @media (max-width: 991px) {
   .col-md-4 {
     flex: 0 0 75%;
@@ -177,3 +224,4 @@ footer {
     padding: 0.7rem 1.2rem;
   }
 }
+
