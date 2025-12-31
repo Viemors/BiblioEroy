@@ -40,13 +40,112 @@ const livros = db.define("livros", {
 
 //arranjo de inicio
 const livros_iniciais = [
-    {titulo: "Dom Casmurro", autor: "Machado de Assis", categoria: "Romance", descricao: "Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.", imagem: "/img/livros/machado/dom casmurro.webp"},
-    {titulo: "Otelo", autor: "William Shakespeare", categoria: "Drama", descricao: "Em Veneza, Otelo, um general mouro a serviço do Estado, conquista Desdêmona, uma jovem, filha de um nobre local. Após enfrentar a ira do pai e defender-se com sucesso contra a acusação de tê-la `enfeitiçado`, ele parte a Chipre em companhia da esposa para combater o inimigo turco?otomano. Lá, seu alferes, o manipulador Iago, consegue paulatinamente instilar na mente do mouro a suspeita de que Desdêmona o traiu. Otelo é a tragédia em que Shakespeare estudou os mecanismos da imaginação, da paixão e do ciúme. Em nova tradução de Lawrence Flores Pereira, que recria a linguagem grandiosa de Otelo e a prosa nefasta de Iago, esta nova edição é acompanhada de uma longa introdução e notas contextuais do tradutor, bem como de um ensaio de W. H. Auden", imagem: "/img/livros/shakespeare/otelo.webp"}, 
-    {titulo: "Hamlet", autor: "William Shakespeare", categoria: "Drama", descricao: "Neste clássico da literatura mundial, um jovem príncipe se reúne com o fantasma de seu pai, que alega que seu próprio irmão, agora casado com sua viúva, o assassinou. O príncipe cria um plano para testar a veracidade de tal acusação, forjando uma brutal loucura para traçar sua vingança. Mas sua aparente insanidade logo começa a causar estragos - para culpados e inocentes. Esta é a sinopse da tragédia de Shakespeare, agora em nova e fluente tradução de Lawrence Flores Pereira, que também oferece uma alentada introdução à obra. A edição traz ainda um clássico ensaio do poeta T.S. Eliot sobre o texto shakespeariano. Hamlet é um dos momentos mais altos da criação artística, um retrato - eletrizante e sempre contemporâneo - da complexa vida emocional de um ser humano.", imagem: "/img/livros/shakespeare/hamlet.webp"}, 
-    {titulo: "Memórias Póstumas de Brás Cubas", autor: "Machado de Assis", categoria: "Realismo", descricao: "Memórias Póstumas de Brás Cubas (1881), um dos principais romances da literatura brasileira, inaugura a fase madura de Machado de Assis e concretiza o ideal estético que consagrou o autor e marca sua obra. Revolucionário e provocativo, o romance rompe com tradições literárias e sintetiza a crítica machadiana à elite brasileira da época. Um dos personagens mais populares da nossa literatura, Brás Cubas é um defunto-autor que dedica sua obra ao verme que primeiro roeu as frias carnes de seu cadáver. O protagonista narra suas memórias, intercalando episódios, delírios, reflexões e teorias, não poupando ninguém do seu olhar crítico e expondo as atitudes mesquinhas que teve em vida. É definitivamente uma obra imperdível que, com linguagem fluente e coesa, conduz sedutoramente o leitor por uma narrativa que deixa nas entrelinhas muito material para reflexões mais profundas.", imagem: "/img/livros/machado/memorias post.webp"}, 
-    {titulo: "A Hora da Estrela", autor: "Clarice Lispector", categoria: "Romantismo", descricao: "Pouco antes de morrer, em 1977, Clarice Lispector decide se afastar da inflexão intimista que caracteriza sua escrita para desafiar a realidade. O resultado desse salto na extroversão é A hora da estrela, o livro mais surpreendente que escreveu. Se desde Perto do coração selvagem, seu romance de estreia, Clarice estava de corpo inteiro, todo o tempo, no centro de seus relatos, agora a cena é ocupada por personagens que em nada se parecem com ela.A nordestina Macabéa, a protagonista de A hora da estrela, é uma mulher miserável, que mal tem consciência de existir. Depois de perder seu único elo com o mundo, uma velha tia, ela viaja para o Rio, onde aluga um quarto, se emprega como datilógrafa e gasta suas horas ouvindo a Rádio Relógio. Apaixona-se, então, por Olímpico de Jesus, um metalúrgico nordestino, que logo a trai com uma colega de trabalho. Desesperada, Macabéa consulta uma cartomante, que lhe prevê um futuro luminoso, bem diferente do que a espera. Clarice cria até um falso autor para seu livro, o narrador Rodrigo S.M., mas nem assim consegue se esconder. O desejo de desaparecimento, que a morte real logo depois consolidaria, se frustra. Entre a realidade e o delírio, buscando social enquanto sua alma a engolfava, Clarice escreveu um livro singular. A hora da estrela é um romance sobre o desamparo a que, apesar do consolo da linguagem, todos estamos entregues.", imagem: "/img/livros/clarice/hora da estrela.webp"}, 
-    {titulo: "Água Viva", autor: "Clarice Lispector", categoria: "Romance", descricao: "'Eu escrevo como se fosse para salvar a vida de alguém. Provavelmente a minha própria vida.' Com essas palavras, Clarice Lispector convida o leitor para uma viagem única. Um sopro de vida e A hora da estrela foram escritos simultaneamente, movidos pela mesma pergunta. 'Estou com a impressão de que ando me imitando um pouco. O pior plágio é o que se faz de si mesmo.' Questionamento agravado pela constatação: 'E há também os meus imitadores (…) algumas pessoas que tiveram o mau gosto de serem eu.' Entre elas, os críticos são os que com maior impertinência e constância tentam imitá-la, reduplicando, em suas análises, a ambiguidade radical atribuída à pessoa Clarice Lispector. Com isso, seus livros se transformam sempre num mergulho no infinito de uma identidade à deriva. Um sopro de vida (e A hora da estrela ) deveria(m) ter encerrado essa monótona romaria. Por que não imaginar que a pessoa Clarice foi pretexto para que a persona da escritora, em sua pluralidade, pudesse triunfar?Hipótese que responde à convocação: 'Se alguém me ler será por conta própria e autorrisco.' E, correndo riscos, Um sopro de vida sugere instigante paralelo. Em 1914, Miguel de Unamuno publicou Niebla, desconcertante romance no qual o protagonista, Augusto Pérez, resolve virar autor de seu destino. Em Um sopro de vida, Clarice imagina uma personagem, Ângela Pralini, através da qual dialoga consigo mesma e, sobretudo, ensaia afastar-se de seu estilo. Isto é, afastar-se de si mesma para evitar o 'pior plágio'. E, bem ao contrário de Unamuno – que mantém Augusto Pérez em rédeas curtas –, Clarice é transformada pelo contato com Ângela Pralini. Claro que, em A hora da estrela, a personagem Macabéa levará esse gesto ao extremo. 'Estamos à beira de uma eclosão. À beira de conhecer a nós mesmos. À beira do ano 2000.' Palavras escritas, não esqueçamos, em 1977. Para reconhecer sua rara força e atualidade, precisamos inventar novas leituras dos textos de Clarice Lispector. Atitude que provavelmente agradaria a quem propôs: 'Escrever é uma indagação. É assim:?'", imagem: "/img/livros/clarice/agua viva.webp"}]
-
+    {
+        titulo: "Dom Casmurro",
+        autor: "Machado de Assis",
+        categoria: "Romance",
+        descricao: "Em Dom Casmurro, o narrador Bento Santiago retoma a infância que passou na Rua de Matacavalos e conta a história do amor e das desventuras que viveu com Capitu, uma das personagens mais enigmáticas e intrigantes da literatura brasileira. Nas páginas deste romance, encontra-se a versão de um homem perturbado pelo ciúme, que revela aos poucos sua psicologia complexa e enreda o leitor em sua narrativa ambígua acerca do acontecimento ou não do adultério da mulher com olhos de ressaca, uma das maiores polêmicas da literatura brasileira.",
+        imagem: "/img/livros/machado/dom casmurro.webp"
+    },
+    {
+        titulo: "Memórias Póstumas de Brás Cubas",
+        autor: "Machado de Assis",
+        categoria: "Realismo",
+        descricao: "Um dos principais romances da literatura brasileira, inaugura a fase madura de Machado de Assis. Brás Cubas é um defunto-autor que dedica sua obra ao verme que primeiro roeu as frias carnes de seu cadáver. O protagonista narra suas memórias, intercalando episódios, delírios e reflexões, expondo as atitudes mesquinhas que teve em vida.",
+        imagem: "/img/livros/machado/memorias post.webp"
+    },
+    {
+        titulo: "Quincas Borba",
+        autor: "Machado de Assis",
+        categoria: "Realismo",
+        descricao: "Continuação temática de 'Memórias Póstumas', apresenta a história de Rubião, um ingênuo professor que herda uma fortuna do filósofo Quincas Borba. Aborda temas como a loucura, a ambição e a hipocrisia social sob a ótica do Humanitismo.",
+        imagem: "/img/livros/machado/quincas.webp"
+    },
+    {
+        titulo: "Otelo",
+        autor: "William Shakespeare",
+        categoria: "Drama",
+        descricao: "A tragédia em que Shakespeare estudou os mecanismos da imaginação, da paixão e do ciúme. O general mouro Otelo é levado pelo manipulador Iago a suspeitar da fidelidade de sua esposa, Desdêmona, resultando em um final catastrófico.",
+        imagem: "/img/livros/shakespeare/otelo.webp"
+    },
+    {
+        titulo: "Hamlet",
+        autor: "William Shakespeare",
+        categoria: "Drama",
+        descricao: "O jovem príncipe da Dinamarca tenta vingar a morte de seu pai após encontrar seu fantasma. Entre planos de vingança e simulações de loucura, a obra é um retrato eletrizante da complexa vida emocional humana.",
+        imagem: "/img/livros/shakespeare/hamlet.webp"
+    },
+    {
+        titulo: "Romeu e Julieta",
+        autor: "William Shakespeare",
+        categoria: "Drama",
+        descricao: "Duas famílias rivais em Verona banham as ruas de sangue, enquanto dois jovens herdeiros desafiam a rixa familiar em um amor secreto. A primeira das grandes tragédias de Shakespeare sobre o destino e o amor impossível.",
+        imagem: "/img/livros/shakespeare/romeu e julieta.webp"
+    },
+    {
+        titulo: "O Castelo",
+        autor: "Franz Kafka",
+        categoria: "Existencialismo",
+        descricao: "O personagem K. tenta desesperadamente entrar em contato com as autoridades de um castelo para assumir um emprego de agrimensor, mas se perde em uma burocracia absurda e aldeões hostis.",
+        imagem: "/img/livros/kafka/o castelo.webp"
+    },
+    {
+        titulo: "Carta ao Pai",
+        autor: "Franz Kafka",
+        categoria: "Autobiográfico",
+        descricao: "Uma carta pungente onde Kafka realiza um ajuste de contas com seu pai autoritário, Hermann Kafka. Um documento profundo sobre a relação entre pais e filhos e a formação da culpa.",
+        imagem: "/img/livros/kafka/carta ao pai.webp"
+    },
+    {
+        titulo: "Metamorfose",
+        autor: "Franz Kafka",
+        categoria: "Ficção",
+        descricao: "A história de Gregor Samsa, que acorda transformado em um inseto monstruoso. Um relato sobre o isolamento humano e a rejeição familiar diante do bizarro.",
+        imagem: "/img/livros/kafka/metamorfose (1).webp"
+    },
+    {
+        titulo: "A Hora da Estrela",
+        autor: "Clarice Lispector",
+        categoria: "Ficção",
+        descricao: "A história de Macabéa, uma nordestina miserável no Rio de Janeiro que mal tem consciência de sua existência. Um romance profundo sobre o desamparo social e espiritual.",
+        imagem: "/img/livros/clarice/hora da estrela.webp"
+    },
+    {
+        titulo: "Água Viva",
+        autor: "Clarice Lispector",
+        categoria: "Romance",
+        descricao: "Uma obra sem enredo tradicional, focada no fluxo de pensamento da narradora sobre a vida, o tempo e a arte. Um mergulho no infinito da identidade.",
+        imagem: "/img/livros/clarice/agua viva.webp"
+    },
+    {
+        titulo: "Um Sopro de Vida",
+        autor: "Clarice Lispector",
+        categoria: "Romance",
+        descricao: "O último livro escrito por Clarice, onde um autor dialoga com sua criação, Ângela Pralini. Uma exploração sobre os limites da vida e da linguagem.",
+        imagem: "/img/livros/clarice/sopro de vida.webp"
+    },
+    {
+        titulo: "Crime e Castigo",
+        autor: "Fiódor Dostoiévski",
+        categoria: "Romance Psicológico",
+        descricao: "A história de Raskólnikov, um jovem estudante que comete um assassinato acreditando estar acima da moral comum, mas é consumido pela culpa e pelo isolamento. Uma exploração profunda sobre o sofrimento e a redenção.",
+        imagem: "/img/livros/dostoievski/crime e castigo.webp"
+    },
+    {
+        titulo: "Noites Brancas",
+        autor: "Fiódor Dostoiévski",
+        categoria: "Romance",
+        descricao: "Um jovem sonhador encontra uma moça em uma ponte de São Petersburgo. Durante quatro noites, eles compartilham suas histórias e solidões sob a luz do sol da meia-noite russa.",
+        imagem: "/img/livros/dostoievski/noites brancas.webp"
+    },
+    {
+    titulo: "Memórias do Subsolo",
+    autor: "Fiódor Dostoiévski",
+    categoria: "Romance Psicológico",
+    descricao: "Um funcionário que vive no subsolo de um edifício em São Petersburgo expõe sua visão de mundo num discurso explosivo e labiríntico sobre a condição humana.",
+    imagem: "/img/livros/dostoievski/memorias do subsolo.webp"
+  }
+];
 livros.sync().then(async ()=>{ // Criar a tabela se não existir
     if(await livros.count() == 0) { //Se a tabela estiver vazia ele atribui os dados iniciais
         livros.bulkCreate(livros_iniciais) //bulkCreate -> Criar com arranjos
