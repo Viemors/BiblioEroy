@@ -73,4 +73,4 @@ const atualizar = async(params) => {
     )
 }
 
-module.exports = {resenhas, Todos, buscarUsername, add, delet, buscar_id, buscar_titulo, buscar_username, atualizar};
+module.exports = {resenhas, Todos, add, delet, buscar_id, buscar_titulo, buscar_username, atualizar};
