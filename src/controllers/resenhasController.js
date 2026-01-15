@@ -8,13 +8,21 @@ const teste = async (req, res) => {
 }
 
 const add = async (req, res) => {
-    const result = await model.add(req.body)
+    const dadosResenha = { //ajustar pra pegar os dados do form
+        livroId: req.body.livroId,
+        username: req.session.username,
+        texto: req.body.texto,
+        avaliacao: req.body.avaliacao || 0 
+    };
+    
+    const result = await model.add(dadosResenha);
+    
     if (result) {
         req.flash('success','resenha publicada com sucesso.');
-        return res.redirect('/pages/perfilLiv');
+        return res.redirect(`/perfilLivro/${req.body.livroId}`); //redireciona pra pagina do livro depois de publicar a resenha
     } else {
         req.flash('error','erro ao publicar resenha.');
-        return res.redirect('/pages/perfilLiv');
+        return res.redirect(`/perfilLivro/${req.body.livroId}`);
     }
 }
 
@@ -39,11 +47,11 @@ const buscar = async (req, res) => {
         return res.redirect("/perfil/livro");
     }
     }
-    if (req.body.tipo == "autor") {
+    if (req.body.tipo == "username") {
        try{
-            const result = await model.buscar_autor(req.body.busca);
+            const result = await model.buscar_username(req.body.busca);
             if (result.resultados.length == 0) {
-                req.flash("error", "autor não encontrado.")
+                req.flash("error", "username não encontrado.")
                 return res.redirect("/perfil/livro");
            }
            res.render("tabelaLivro/consultas", {result});
@@ -72,9 +80,10 @@ const atualizar = async (req, res) => {
 
 const perfilLivro = async (req, res) => {
     const livro = await model.buscar_id(req.params.id);
+    const usuario = await modelUser.buscar_nome(req.session.username); //pegar o username do usuario logado pra add como autor da resenha
 
     if (livro) {
-        res.render("pages/perfilLiv", { livro });
+        res.render("pages/perfilLiv", { livro, usuario });
     } else {
         req.flash("error", "Livro não encontrado.");
         return res.redirect("/perfil/livro");

@@ -110,12 +110,19 @@ const mostrar = async (req, res) => {
 
 const perfilLivro = async (req, res) => {
     const livro = await model.buscar_id(req.params.id);
+    const usuario = await modelUser.buscar_nome(req.session.username); //adicionado para colocar o usuario como autor da resenha
+    
+    // buscar resenhas do livro
+    const modelResenhas = require("../model/resenhasModel");
+    const resenhas = await modelResenhas.resenhas.findAll({
+        where: { livroId: req.params.id }
+    });
 
     if (livro) {
-        res.render("pages/perfilLiv", { livro });
+        res.render("pages/perfilLiv", { livro, usuario, resenhas }); //tudo que precisa ser usado na pagina ejs
     } else {
         req.flash("error", "Livro não encontrado.");
-        return res.redirect("/perfil/livro");
+        return res.redirect("/mostrarLivros"); //redirecionar para a pagina de mostrar livros caso o id n exista, antes dava erro
     }
 };
 

@@ -38,12 +38,64 @@
             <p id="categoria">categoria: <%=livro.categoria%></p>
             <p id="classific">classificação: estrelasss</p>
         </div>
-        
+
+        <!-- FORMULÁRIO RESENHAS-->
+        <div class="paginaEspecifica"> <!--form de add resenha (vou tirar dai e organizar depois)-->
+        <h2>Adicionar resenha</h2>
+        <div>
+            <label>Username</label>
+            <input type="text" name="username" value="<%=usuario.username%>" disabled>
+        </div>
+        <form action="/addResenha" method="POST">
+            <label for="resenha" class="form-label" name="avaliacao">Avaliação:</label>
+            <div class="rating-container"> <!--estrelas de avaliação, preciso arrumar ainda -->
+                <span class="star" data-rating="1">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="5">&#9733;</span>
+            </div>
+            <div class="mb-3">
+                <label for="resenha" class="form-label">Sua resenha:</label>
+                <textarea class="form-control" id="resenha" name="texto" rows="4" required></textarea>
+            </div>
+            <input type="hidden" name="livroId" value="<%=livro.id%>">
+            <input type="hidden" name="avaliacao" id="avaliacao-input" value="0">
+            <button type="submit" class="btn btn-primary">Enviar Resenha</button>
+        </form>
+        <!-- FIM FORMULÁRIO RESENHAS-->
+
+        <!-- MOSTRAR RESENHAS EXISTENTES-->
+        <div class="resenhas-lista">
+            <h2>Resenhas</h2>
+            <% if (resenhas && resenhas.length > 0) { %> <!--lista de resenhas já feitas com o LIvroId-->
+                <% resenhas.forEach(resenha => { %>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= resenha.username %></h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">
+                                <div class="rating-container">
+                                    <span class="star" data-rating="1">&#9733;</span>
+                                    <span class="star" data-rating="2">&#9733;</span>
+                                    <span class="star" data-rating="3">&#9733;</span>
+                                    <span class="star" data-rating="4">&#9733;</span>
+                                    <span class="star" data-rating="5">&#9733;</span>
+                                </div>
+                                <p>Avaliação: <span id="rating-display">0</span></p>
+                            </h6>
+                            <p class="card-text"><%= resenha.texto %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Nenhuma resenha ainda. Seja o primeiro a avaliar!</p>
+            <% } %>
+        </div>
+    </div>
     </main>
-    <div class="paginaEspecifica">
+
         <footer>
             <%- include('../partials/footer') %>   
         </footer>
-    </div>
-</body>
+    </body>
 </html>
